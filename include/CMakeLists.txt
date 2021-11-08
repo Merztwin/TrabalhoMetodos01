@@ -1,0 +1,1 @@
+add_library(OurInclude Aux.cc NewtonRaphson.cc NewtonModificado.cc Secante.cc)
