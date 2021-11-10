@@ -1,0 +1,2 @@
+/usr/bin/ar qc libOurInclude.a  CMakeFiles/OurInclude.dir/Aux.cc.o CMakeFiles/OurInclude.dir/NewtonRaphson.cc.o CMakeFiles/OurInclude.dir/NewtonModificado.cc.o CMakeFiles/OurInclude.dir/Secante.cc.o
+/usr/bin/ranlib libOurInclude.a

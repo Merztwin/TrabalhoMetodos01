@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/TrabalhoMetodos01.dir/main.cc.o  -o TrabalhoMetodos01  include/libOurInclude.a 

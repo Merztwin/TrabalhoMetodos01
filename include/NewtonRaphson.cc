@@ -1,7 +1,7 @@
 #include "NewtonRaphson.hh"
 
 //
-double NewtonRaphson(double d, double a, double EPSILON, std::vector<double> &lim_inf, std::vector<double> &lim_sup)
+double NewtonRaphson(double d, double a, double EPSILON, std::vector<double> &lim_inf, std::vector<double> &lim_sup, std::vector<int> &iteracoes)
 {
   double x0=d;
 
@@ -22,5 +22,6 @@ double NewtonRaphson(double d, double a, double EPSILON, std::vector<double> &li
 
   lim_inf.push_back(x1 - EPSILON);
   lim_sup.push_back(x1 + EPSILON);
+  iteracoes.push_back(k);
   return x1;
 }
