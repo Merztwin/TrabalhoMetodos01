@@ -1,6 +1,6 @@
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/build/CMakeFiles/TrabalhoMetodos01.dir
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/build/include/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/build/include/CMakeFiles/edit_cache.dir
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/build/include/CMakeFiles/OurInclude.dir
+/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/build/CMakeFiles/TrabalhoMetodos01.dir
+/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/build/include/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/build/include/CMakeFiles/edit_cache.dir
+/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/build/include/CMakeFiles/OurInclude.dir

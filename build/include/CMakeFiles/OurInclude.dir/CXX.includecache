@@ -6,11 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/Aux.cc
-Aux.hh
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/Aux.hh
-
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/Aux.hh
+/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/include/Aux.hh
 vector
 -
 iostream
@@ -22,27 +18,11 @@ cmath
 cstdio
 -
 
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/NewtonModificado.cc
-NewtonModificado.hh
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/NewtonModificado.hh
-
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/NewtonModificado.hh
-Aux.hh
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/Aux.hh
-
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/NewtonRaphson.cc
-NewtonRaphson.hh
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/NewtonRaphson.hh
-
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/NewtonRaphson.hh
-Aux.hh
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/Aux.hh
-
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/Secante.cc
+/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/include/Secante.cc
 Secante.hh
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/Secante.hh
+/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/include/Secante.hh
 
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/Secante.hh
+/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/include/Secante.hh
 Aux.hh
-/mnt/c/Users/raske/Desktop/Metodos - Trabalho 1/TrabalhoMetodos01/include/Aux.hh
+/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/include/Aux.hh
 
