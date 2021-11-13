@@ -3,9 +3,9 @@
 #include "NewtonModificado.hh"
 #include "Secante.hh"
 
-//
 void QuadroResposta(std::vector<double> a, std::vector<double> d, std::vector<double> limite_inf, std::vector<double> limite_sup)
 {
+  std::cout << "a |    d     |   Intervalo de erro" << std::endl;
   int tam = a.size();
 
   for (int i = 0; i < tam; i++)
@@ -21,7 +21,7 @@ void QuadroComparativo(std::vector<double> a, std::vector<double> ds_nr, std::ve
 
   int tam = a.size();
   std::cout << "K = Numero de iteracoes" << std::endl;
-  std::cout << "A|(d NR,K)|(d NM, K)|(d sec, K)" << std::endl;
+  std::cout << "a |  (d NR,K)    |   (d NM, K)  |  (d sec, K)" << std::endl;
 
   for (int i = 0; i < tam; i++)
   {
@@ -34,10 +34,10 @@ void QuadroComparativo(std::vector<double> a, std::vector<double> ds_nr, std::ve
   }
 }
 
-
 int main(int argc, char **argv)
 {
-  double aprox = 0;
+  double aprox;
+  double aprox_2;
   double epsilon;
   int n = 0;
   std::vector<double> as;
@@ -46,7 +46,6 @@ int main(int argc, char **argv)
   std::vector<int> iterNM;
   std::vector<int> iterSEC;
 
-  //
   std::vector<double> ds_nr;
   std::vector<double> nr_limite_inf;
   std::vector<double> nr_limite_sup;
@@ -59,44 +58,65 @@ int main(int argc, char **argv)
   std::vector<double> sec_limite_inf;
   std::vector<double> sec_limite_sup;
 
-
-  std::cout << "Quantidade de a's: ";
+  std::cout << "Quantidade de amplitudes (a):";
   std::cin >> n;
-  std::cout << std::endl;
 
   double a_atual;
-  for(int i = 0; i < n; i++){
-    std::cout << "Insira o a" << i+1 << ":";
+  for (int i = 0; i < n; i++)
+  {
+    std::cout << "Amplitude a_" << i + 1 << ":";
+
     std::cin >> a_atual;
-    as.push_back(a_atual);
+    if (a_atual < 0)
+    {
+      std::cout << "Valores negativos para a amplitude nao serao considerados" << std::endl;
+    }
+    else
+    {
+      as.push_back(a_atual);
+    }
   }
-  
-  std::cout << "Insira a precisao:";
+
+  std::cout << "Aproximacao 1 (d0):";
+  std::cin >> aprox;
+
+  std::cout << "Aproximacao 2 (d1):";
+  std::cin >> aprox_2;
+
+  std::cout << "Precisao:";
   std::cin >> epsilon;
   std::cout << std::endl;
+  if (as.size() != 0)
+  {
+    for (int i = 0; i < as.size(); i++)
+    {
 
-  //
-  for(int i = 0; i < n; i++){
-    double res_nr = NewtonRaphson(aprox, as.at(i), epsilon, nr_limite_inf, nr_limite_sup, iterNR);
-    ds_nr.push_back(res_nr);
+      double res_nr = NewtonRaphson(aprox, as.at(i), epsilon, nr_limite_inf, nr_limite_sup, iterNR);
+      ds_nr.push_back(res_nr);
 
-    double res_nm = NewtonModificado(aprox, as.at(i), epsilon, nm_limite_inf, nm_limite_sup, iterNM);
-    ds_nm.push_back(res_nm);
+      double res_nm = NewtonModificado(aprox, as.at(i), epsilon, nm_limite_inf, nm_limite_sup, iterNM);
+      ds_nm.push_back(res_nm);
 
-    double res_sec = Secante(aprox, -1, epsilon, as.at(i), sec_limite_inf, sec_limite_sup, iterSEC);
-    ds_sec.push_back(res_sec);
+      double res_sec = Secante(aprox, aprox_2, epsilon, as.at(i), sec_limite_inf, sec_limite_sup, iterSEC);
+      ds_sec.push_back(res_sec);
+    }
+
+    std::cout << "Quadro Resposta" << std::endl;
+    std::cout << "Newton-Raphson" << std::endl;
+    QuadroResposta(as, ds_nr, nr_limite_inf, nr_limite_sup);
+    std::cout << std::endl;
+    std::cout << "Newton Modificado" << std::endl;
+    QuadroResposta(as, ds_nm, nm_limite_inf, nm_limite_sup);
+    std::cout << std::endl;
+    std::cout << "Secante" << std::endl;
+    QuadroResposta(as, ds_sec, sec_limite_inf, sec_limite_sup);
+    std::cout << std::endl;
+    QuadroComparativo(as, ds_nr, ds_nm, ds_sec, iterNR, iterNM, iterSEC);
   }
-
-  //
-  std::cout << "Quadro Resposta" << std::endl;
-  std::cout << "Newton-Raphson" << std::endl;
-  QuadroResposta(as, ds_nr, nr_limite_inf, nr_limite_sup);
-  std::cout << "Newton-Raphson Modificado" << std::endl;
-  QuadroResposta(as, ds_nm, nm_limite_inf, nm_limite_sup);
-  std::cout << "Secante" << std::endl;
-  QuadroResposta(as, ds_sec, sec_limite_inf, sec_limite_sup);
-
-  QuadroComparativo(as, ds_nr, ds_nm, ds_sec, iterNR, iterNM, iterSEC);
+  else
+  {
+    std::cout << "Nao existem raizes para estas funcoes" << std::endl;
+  }
 
   return EXIT_SUCCESS;
 }

@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I"/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/include" 
+CXX_INCLUDES = -I"/mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho-1/TrabalhoMetodos01/include" 
 

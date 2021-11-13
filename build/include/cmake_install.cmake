@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho1/TrabalhoMetodos01/include
+# Install script for directory: /mnt/c/Users/raske/Desktop/ufc/6-semestre/Métodos Numéricos/trabalho-1/TrabalhoMetodos01/include
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
