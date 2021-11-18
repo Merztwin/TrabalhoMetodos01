@@ -3,15 +3,15 @@
 #include "NewtonModificado.hh"
 #include "Secante.hh"
 
-void QuadroResposta(std::vector<double> a, std::vector<double> d, std::vector<double> limite_inf, std::vector<double> limite_sup)
+void QuadroResposta(std::vector<double> a, std::vector<double> d, std::vector<double> erro)
 {
-  std::cout << "a |    d     |   Intervalo de erro" << std::endl;
+  std::cout << "a |     d     |   Erro" << std::endl;
   int tam = a.size();
 
   for (int i = 0; i < tam; i++)
   {
     std::cout << a.at(i) << " | " << d.at(i) << " | "
-              << "[" + std::to_string(limite_inf.at(i)) + ", " + std::to_string(limite_sup.at(i)) + "]" << std::endl;
+              << std::to_string(erro.at(i)) << std::endl;
   }
 }
 
@@ -47,16 +47,13 @@ int main(int argc, char **argv)
   std::vector<int> iterSEC;
 
   std::vector<double> ds_nr;
-  std::vector<double> nr_limite_inf;
-  std::vector<double> nr_limite_sup;
+  std::vector<double> nr_erro;
 
   std::vector<double> ds_nm;
-  std::vector<double> nm_limite_inf;
-  std::vector<double> nm_limite_sup;
+  std::vector<double> nm_erro;
 
   std::vector<double> ds_sec;
-  std::vector<double> sec_limite_inf;
-  std::vector<double> sec_limite_sup;
+  std::vector<double> sec_erro;
 
   std::cout << "Quantidade de amplitudes (a):";
   std::cin >> n;
@@ -91,25 +88,25 @@ int main(int argc, char **argv)
     for (int i = 0; i < as.size(); i++)
     {
 
-      double res_nr = NewtonRaphson(aprox, as.at(i), epsilon, nr_limite_inf, nr_limite_sup, iterNR);
+      double res_nr = NewtonRaphson(aprox, as.at(i), epsilon, nr_erro, iterNR);
       ds_nr.push_back(res_nr);
 
-      double res_nm = NewtonModificado(aprox, as.at(i), epsilon, nm_limite_inf, nm_limite_sup, iterNM);
+      double res_nm = NewtonModificado(aprox, as.at(i), epsilon, nm_erro, iterNM);
       ds_nm.push_back(res_nm);
 
-      double res_sec = Secante(aprox, aprox_2, epsilon, as.at(i), sec_limite_inf, sec_limite_sup, iterSEC);
+      double res_sec = Secante(aprox, aprox_2, epsilon, as.at(i), sec_erro, iterSEC);
       ds_sec.push_back(res_sec);
     }
 
     std::cout << "Quadro Resposta" << std::endl;
     std::cout << "Newton-Raphson" << std::endl;
-    QuadroResposta(as, ds_nr, nr_limite_inf, nr_limite_sup);
+    QuadroResposta(as, ds_nr, nr_erro);
     std::cout << std::endl;
     std::cout << "Newton Modificado" << std::endl;
-    QuadroResposta(as, ds_nm, nm_limite_inf, nm_limite_sup);
+    QuadroResposta(as, ds_nm, nm_erro);
     std::cout << std::endl;
     std::cout << "Secante" << std::endl;
-    QuadroResposta(as, ds_sec, sec_limite_inf, sec_limite_sup);
+    QuadroResposta(as, ds_sec, sec_erro);
     std::cout << std::endl;
     QuadroComparativo(as, ds_nr, ds_nm, ds_sec, iterNR, iterNM, iterSEC);
   }

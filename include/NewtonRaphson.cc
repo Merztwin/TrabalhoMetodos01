@@ -1,29 +1,28 @@
 #include "NewtonRaphson.hh"
 
 //
-double NewtonRaphson(double d, double a, double EPSILON, std::vector<double> &lim_inf, std::vector<double> &lim_sup, std::vector<int> &iteracoes)
+double NewtonRaphson(double d, double a, double EPSILON, std::vector<double> &erro, std::vector<int> &iteracoes)
 {
   int k = 0;
-  double x0=d;
+  double x0 = d;
 
-  if(Function(x0,a)<EPSILON){
-    lim_inf.push_back(x0 - EPSILON);
-    lim_sup.push_back(x0 + EPSILON);
+  if (Function(x0, a) < EPSILON)
+  {
+    erro.push_back(fabs(Function(x0, a)));
     iteracoes.push_back(k);
     return x0;
   }
   double x1 = 0;
-  x1 = x0 - (Function(x0,a)/DerivedFunction(x0,a));
-  
+  x1 = x0 - (Function(x0, a) / DerivedFunction(x0, a));
 
-	while((fabs(Function(x1,a))>=EPSILON) || (fabs(x1-x0)>=EPSILON)){
+  while ((fabs(Function(x1, a)) >= EPSILON) || (fabs(x1 - x0) >= EPSILON))
+  {
     k++;
     x0 = x1;
-    x1 = x0 - (Function(x0,a)/DerivedFunction(x0,a));
-	}
+    x1 = x0 - (Function(x0, a) / DerivedFunction(x0, a));
+  }
 
-  lim_inf.push_back(x1 - EPSILON);
-  lim_sup.push_back(x1 + EPSILON);
+  erro.push_back(fabs(Function(x1, a)));
   iteracoes.push_back(k);
   return x1;
 }
