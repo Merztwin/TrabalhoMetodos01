@@ -15,7 +15,7 @@ double NewtonModificado(double d, double a, double EPSILON, std::vector<double> 
   x1 = x1 - (Function(x1,a)/DerivedFunction(x0,a));
   
 
-	while((fabs(Function(x1,a))>=EPSILON) || (fabs(x1-x0)>=EPSILON)){
+	while((fabs(Function(x1,a))>=EPSILON) && (fabs(x1-x0)>=EPSILON)){
     k++;
     x0 = x1;
     x1 = x1 - (Function(x1,a)/DerivedFunction(x0,a));

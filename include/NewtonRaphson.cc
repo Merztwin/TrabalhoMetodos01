@@ -15,7 +15,7 @@ double NewtonRaphson(double d, double a, double EPSILON, std::vector<double> &er
   double x1 = 0;
   x1 = x0 - (Function(x0, a) / DerivedFunction(x0, a));
 
-  while ((fabs(Function(x1, a)) >= EPSILON) || (fabs(x1 - x0) >= EPSILON))
+  while ((fabs(Function(x1, a)) >= EPSILON) && (fabs(x1 - x0) >= EPSILON))
   {
     k++;
     x0 = x1;
