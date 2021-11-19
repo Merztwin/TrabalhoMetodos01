@@ -6,7 +6,7 @@
 #include <cstdio>
 
 //
-double Function(double d,double a);
+double Function(double d, double a);
 
 //
-double DerivedFunction(double d,double a);
+double DerivedFunction(double d, double a);

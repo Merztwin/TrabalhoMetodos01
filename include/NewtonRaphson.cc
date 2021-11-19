@@ -21,8 +21,15 @@ double NewtonRaphson(double d, double a, double EPSILON, std::vector<double> &er
     x0 = x1;
     x1 = x0 - (Function(x0, a) / DerivedFunction(x0, a));
   }
+  
+  if(fabs(Function(x1, a)) < EPSILON){
+    erro.push_back(fabs(Function(x1, a)));
+  }
 
-  erro.push_back(fabs(Function(x1, a)));
+  else{
+    erro.push_back(fabs(x1 - x0));
+  }
+  
   iteracoes.push_back(k);
   return x1;
 }

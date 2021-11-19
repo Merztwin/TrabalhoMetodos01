@@ -5,7 +5,7 @@
 
 void QuadroResposta(std::vector<double> a, std::vector<double> d, std::vector<double> erro)
 {
-  std::cout << "a |     d     |   Erro" << std::endl;
+  std::cout << "a |      d     |   Erro" << std::endl;
   int tam = a.size();
 
   for (int i = 0; i < tam; i++)
@@ -40,6 +40,8 @@ int main(int argc, char **argv)
   double aprox_2;
   double epsilon;
   int n = 0;
+
+  std::cout << std::setprecision(9);
   std::vector<double> as;
 
   std::vector<int> iterNR;
